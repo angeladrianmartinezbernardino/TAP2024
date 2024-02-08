@@ -13,4 +13,15 @@ public class Calculadora extends Stage {
     private GridPane gdpTeclado;
     private TextField txtPantalla;
     private Button[] arBotones = new Button[16];
+
+    public Calculadora(){
+        CrearUI();
+        this.setTitle("Mi primer Calculadora :)");
+        this.setScene(escena);
+        this.show();
+    }
+
+    private void CrearUI() {
+        vContenedor = new VBox();
+    }
 }
