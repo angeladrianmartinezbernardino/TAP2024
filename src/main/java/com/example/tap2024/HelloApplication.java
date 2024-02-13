@@ -28,7 +28,7 @@ public class HelloApplication extends Application {
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();
-        new Calculadora();
+        //new Calculadora();
         stage.setMaximized(true);
     }
 
@@ -36,6 +36,7 @@ public class HelloApplication extends Application {
         mitCalculadora = new MenuItem("Calculadora");
         menParcial1 = new Menu("Primer Parcial");
         menParcial1.getItems().addAll(mitCalculadora);
+        menParcial1.setOnAction(event -> new Calculadora());
 
         menParcial2 = new Menu("Segundo Parcial");
 

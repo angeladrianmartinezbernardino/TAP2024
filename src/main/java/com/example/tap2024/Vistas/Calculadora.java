@@ -50,6 +50,4 @@ public class Calculadora extends Stage {
     private void setValue(char simbolo) {
         txtPantalla.appendText(simbolo+"");
     }
-
-
 }
