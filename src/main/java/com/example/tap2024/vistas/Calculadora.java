@@ -8,12 +8,13 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class Calculadora extends Stage {
+
     private Scene escena;
     private VBox vContenedor;
     private GridPane gdpTeclado;
     private TextField txtPantalla;
     private Button[][] arBotones = new Button[4][4];
-    private char[] arEtiquetas = {'7', '8', '9', '/', '4', '5', '6', '*', '1', '2', '3', '-', '0', '.', '=', '+'};
+    private char[] arEtiquetas = {'7','8','9','/','4','5','6','*','1','2','3','-','0','.','=','+'};
 
     public Calculadora(){
         CrearUI();
@@ -26,27 +27,29 @@ public class Calculadora extends Stage {
         txtPantalla = new TextField("0");
         gdpTeclado = new GridPane();
         CrearTeclado();
-        vContenedor = new VBox(txtPantalla, gdpTeclado);
+        vContenedor = new VBox(txtPantalla,gdpTeclado);
         vContenedor.setSpacing(5);
-        escena = new Scene(vContenedor, 200, 200);
+        escena = new Scene(vContenedor, 200,200);
     }
 
     private void CrearTeclado() {
         int pos = 0;
         char simbolo;
-        for (int i = 0; i < 4 ; i++){
-            for (int j = 0; j < 4 ; j++){
-                arBotones[i][j] =  new Button(arEtiquetas[pos]+"");
-                arBotones[i][j].setPrefSize(50, 50);
+        for (int i = 0; i < 4 ; i++) {
+            for (int j = 0; j < 4; j++) {
+                arBotones[i][j] = new Button(arEtiquetas[pos]+"");
+                arBotones[i][j].setPrefSize(50,50);
                 int finalPos = pos;
                 arBotones[i][j].setOnAction(event -> setValue(arEtiquetas[finalPos]));
-                gdpTeclado.add(arBotones[i][j], j, i);
+                gdpTeclado.add(arBotones[i][j],j,i);
                 pos++;
             }
         }
     }
 
     private void setValue(char simbolo) {
-        txtPantalla.appendText(simbolo + "");
+        txtPantalla.appendText(simbolo+"");
     }
+
+
 }
