@@ -1,8 +1,7 @@
 package com.example.tap2024;
 
-import com.example.tap2024.vistas.Calculadora;
+import com.example.tap2024.Vistas.Calculadora;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
@@ -25,6 +24,7 @@ public class HelloApplication extends Application {
         bdpPanel = new BorderPane();
         bdpPanel.setTop(mnbPrincipal);
         Scene scene = new Scene(bdpPanel);
+        scene.getStylesheets().add(getClass().getResource("/Estilos/Main.css").toString());
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();

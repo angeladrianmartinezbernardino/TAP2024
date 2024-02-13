@@ -1,4 +1,4 @@
-package com.example.tap2024.vistas;
+package com.example.tap2024.Vistas;
 
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
