@@ -7,13 +7,14 @@ import javafx.stage.Stage;
 public class CuadroMagico extends Stage {
 
     private Scene escena;
-    public CuadroMagico(){
+
+    public CuadroMagico() {
         this.setTitle("Cuadro Mágico");
         this.setScene(new Scene(new Button("Da Click")));
         this.show();
     }
 
-    private void CrearUI(){
+    private void CrearUI() {
         escena = new Scene(new Button("Da click"));
     }
 }

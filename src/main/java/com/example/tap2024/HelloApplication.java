@@ -17,6 +17,7 @@ public class HelloApplication extends Application {
     private Menu menParcial1, menParcial2, menSalir;
     private MenuItem mitCalculadora, mitMemorama, mitSalir;
     private BorderPane bdpPanel;
+
     @Override
     public void start(Stage stage) throws IOException {
         CrearMenu();
@@ -35,18 +36,19 @@ public class HelloApplication extends Application {
 
     private void CrearMenu() {
         mitCalculadora = new MenuItem("Calculadora");
-        menParcial1 = new Menu("Primer Parcial");
+        menParcial1.setOnAction(event -> new Calculadora());
 
         mitMemorama = new MenuItem("Memorama");
         mitMemorama.setOnAction((event) -> new Memorama());
 
+        menParcial1 = new Menu("Primer Parcial");
         menParcial1.getItems().addAll(mitCalculadora, mitMemorama);
-        menParcial1.setOnAction(event -> new Calculadora());
 
         menParcial2 = new Menu("Segundo Parcial");
 
         mitSalir = new MenuItem("Salir");
         menSalir = new Menu("Salir");
+
         menSalir.getItems().add(mitSalir);
         menSalir.setOnAction(event -> System.exit(0));
 
