@@ -5,6 +5,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -53,6 +55,7 @@ public class Memorama extends Stage {
         vBoxPrincipal.setSpacing(15);
 
         escena = new Scene(vBoxPrincipal, 300, 200);
+        RevolverCartas();
     }
 
     private void iniciarTimer() {
@@ -75,5 +78,30 @@ public class Memorama extends Stage {
             }
         });
         timerThread.start();
+    }
+
+    public void RevolverCartas() {
+        String[] arImaagenes = {"Cereza.jpg", "Fresa.jpg", "Mango.jpg", "Melon.jpg", "Mora.jpg", "Pera.jpg", "Sandia.jpg"};
+        Button[][] arBtnCartas = new Button[2][5];
+        ImageView imvCarta ;
+        int posx = 0;
+        int posy = 0;
+        int cont = 0;
+        for (int i = 0; i < arImaagenes.length; ) {
+            posx = (int) (Math.random() * 2);
+            posy = (int) (Math.random() * 4);
+            if (arBtnCartas[posx][posy] == null) {
+                arBtnCartas[posx][posy] = new Button();
+                imvCarta = new ImageView(getClass().getResource("/Imagenes/"+arImaagenes[i]).toString());
+                cont++;
+                arBtnCartas[posx][posy].setGraphic(imvCarta);
+                arBtnCartas[posx][posy].setPrefSize(100, 100);
+
+                if (cont == 2) i++;
+            }
+        }
+
+        Image[][] arCartas = new Image[2][5];
+        Image carta;
     }
 }
