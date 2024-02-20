@@ -96,7 +96,6 @@ public class Memorama extends Stage {
                 cont++;
                 arBtnCartas[posx][posy].setGraphic(imvCarta);
                 arBtnCartas[posx][posy].setPrefSize(100, 100);
-
                 if (cont == 2) i++;
             }
         }
