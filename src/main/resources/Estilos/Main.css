@@ -1,44 +1,44 @@
-.root{
+.root {
     -fx-background-image: url('https://i.blogs.es/3fd5a4/jumpstory-download20220511-143520/1366_2000.jpg'), url('https://www.tecnm.mx/images/tecnm_virtual/tecnm.png');
     -fx-background-size: 100%, 200px;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center, bottom right;
 }
 
-.menu-bar{
+.menu-bar {
     -fx-background-color: rgb(255, 251, 0);
     -fx-border-color: rgb(0, 0, 0);
     -fx-border-width: 3px;
 }
 
-.menu{
+.menu {
     -fx-background-color: rgb(0, 0, 0);
 }
 
-.label{
+.label {
     -fx-background-color: rgb(255, 255, 255);
     -fx-padding: 10;
 }
 
-.menu:hover{
+.menu:hover {
     -fx-background-color: rgb(255, 0, 0);
 }
 
-.label:hover{
+.label:hover {
     -fx-background-color: rgb(0, 0, 0);
     -fx-font-size: 15pt;
 }
 
-.menu-item{
+.menu-item {
     -fx-background-color: #4e9A18;
     -fx-border-color: #CCC;
 }
 
-.menu-item:hover{
+.menu-item:hover {
     -fx-background-color: #000;
     -fx-text-fill: #000;
 }
 
-.menu-item label{
+.menu-item label {
     -fx-text-fill: #000;
 }

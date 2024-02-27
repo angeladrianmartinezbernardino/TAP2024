@@ -33,14 +33,12 @@ public class Memorama extends Stage {
     }
 
     private void CrearUI() {
-        txtNoPares = new TextField();
-        btnResolver = new Button("Resolver");
-        lblTimer = new Label("00:00");
-
         // Timer HBox
         hBoxTimer = new HBox(lblTimer);
         hBoxTimer.setSpacing(10);
-
+        txtNoPares = new TextField();
+        btnResolver = new Button("Resolver");
+        lblTimer = new Label("00:00");
         // Jugadores HBoxes
         gridPaneJugadores = new GridPane();
         for (int i = 0; i < hBoxJugadores.length; i++) {
@@ -49,11 +47,9 @@ public class Memorama extends Stage {
             gridPaneJugadores.setHgap(10);
             gridPaneJugadores.setVgap(10);
         }
-
         // VBox principal
         vBoxPrincipal = new VBox(new HBox(new Label("No. Pares:"), txtNoPares, btnResolver), gridPaneJugadores, hBoxTimer);
         vBoxPrincipal.setSpacing(15);
-
         escena = new Scene(vBoxPrincipal, 300, 200);
         RevolverCartas();
     }

@@ -35,25 +35,30 @@ public class HelloApplication extends Application {
     }
 
     private void CrearMenu() {
+        // Inicializar MenuBar
         mnbPrincipal = new MenuBar();
-        mnbPrincipal.getMenus().addAll(menParcial1, menParcial2, menSalir);
 
+        // Inicializar Menus
         menParcial1 = new Menu("Primer Parcial");
-        menParcial1.getItems().addAll(mitCalculadora, mitMemorama);
+        menParcial2 = new Menu("Segundo Parcial");
+        menSalir = new Menu("Salir");
 
+        // Inicializar MenuItems
         mitCalculadora = new MenuItem("Calculadora");
-        menParcial1.setOnAction(event -> new Calculadora());
-
+        mitCalculadora.setOnAction((event) -> new Calculadora());
         mitMemorama = new MenuItem("Memorama");
         mitMemorama.setOnAction((event) -> new Memorama());
-
-        menParcial2 = new Menu("Segundo Parcial");
-
         mitSalir = new MenuItem("Salir");
-        menSalir = new Menu("Salir");
+        mitSalir.setOnAction(event -> System.exit(0));
+
+        // Añadir MenuItems a Menus
+        menParcial1.getItems().addAll(mitCalculadora, mitMemorama);
         menSalir.getItems().add(mitSalir);
-        menSalir.setOnAction(event -> System.exit(0));
+
+        // Añadir Menus a MenuBar
+        mnbPrincipal.getMenus().addAll(menParcial1, menParcial2, menSalir);
     }
+
 
     public static void main(String[] args) {
         launch();
