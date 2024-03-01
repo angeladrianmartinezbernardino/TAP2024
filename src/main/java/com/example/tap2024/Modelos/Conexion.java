@@ -12,7 +12,7 @@ public class Conexion {
 
     public static void Crear_conexion() {
         try {
-            //Class.forName("con.mysql.cj.jdbc.Driver");
+            //Class.forName("com.mysql.cj.jdbc.Driver");
             Class.forName("org.mariadb.jdbc.Driver");
             //Conexion = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/" + DB + "?allowPublicKeyRetrieval=true&useSSL=false", USER, PASSWORD);
             Conexion = DriverManager.getConnection("jdbc:mariadb://" + SERVER + ":3306/" + DB, USER, PASSWORD);
