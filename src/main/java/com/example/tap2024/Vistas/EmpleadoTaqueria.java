@@ -1,15 +1,14 @@
 package com.example.tap2024.Vistas;
 
+import com.example.tap2024.Componentes.ButtonCell;
 import com.example.tap2024.Modelos.Empleados_DAO;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.ToolBar;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 
 public class EmpleadoTaqueria extends Stage {
     private VBox vbxPrincipal;
@@ -50,7 +49,14 @@ public class EmpleadoTaqueria extends Stage {
         tbcTelEmp.setCellValueFactory(new PropertyValueFactory<>("telefono"));
         TableColumn<Empleados_DAO, String> tbcDirEmp = new TableColumn<>("Direccion");
         tbcDirEmp.setCellValueFactory(new PropertyValueFactory<>("direccion"));
-        tbvEmpleados.getColumns().addAll(tbcNombreEmp, tbcrfcEmp, tbcSueldoEmp, tbcTelEmp, tbcDirEmp);
+        TableColumn<Empleados_DAO, String> tbcEditar = new TableColumn<Empleados_DAO, String>();
+        tbcEditar.setCellFactory(new Callback<TableColumn<Empleados_DAO, String>, TableCell<Empleados_DAO, String>>() {
+            @Override
+            public TableCell<Empleados_DAO, String> call(TableColumn<Empleados_DAO, String> empleadosDaoStringTableColumn) {
+                return new ButtonCell();
+            }
+        });
+        tbvEmpleados.getColumns().addAll(tbcNombreEmp, tbcrfcEmp, tbcSueldoEmp, tbcTelEmp, tbcDirEmp, tbcEditar);
         tbvEmpleados.setItems(objEmp.Consultar());
     }
 }

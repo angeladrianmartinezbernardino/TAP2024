@@ -1,7 +1,6 @@
 package com.example.tap2024.Vistas;
 
 import com.example.tap2024.Modelos.Empleados_DAO;
-import com.mysql.cj.xdevapi.Table;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
