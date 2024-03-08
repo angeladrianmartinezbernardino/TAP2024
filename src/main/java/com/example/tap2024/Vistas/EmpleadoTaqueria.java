@@ -28,6 +28,8 @@ public class EmpleadoTaqueria extends Stage {
     private void CrearUI() {
         ImageView imvEmp = new ImageView(getClass().getResource("/Imagenes/Edificio.png").toString());
         btnAgregarEmpleado = new Button();
+        btnAgregarEmpleado.setOnAction(event -> new EmpleadosForm(tbvEmpleados));
+        btnAgregarEmpleado.setPrefSize(50, 50);
         btnAgregarEmpleado.setGraphic(imvEmp);
         tlbMenu = new ToolBar(btnAgregarEmpleado);
         CrearTable();
@@ -48,7 +50,6 @@ public class EmpleadoTaqueria extends Stage {
         tbcTelEmp.setCellValueFactory(new PropertyValueFactory<>("telefono"));
         TableColumn<Empleados_DAO, String> tbcDirEmp = new TableColumn<>("Direccion");
         tbcDirEmp.setCellValueFactory(new PropertyValueFactory<>("direccion"));
-        //...
         tbvEmpleados.getColumns().addAll(tbcNombreEmp, tbcrfcEmp, tbcSueldoEmp, tbcTelEmp, tbcDirEmp);
         tbvEmpleados.setItems(objEmp.Consultar());
     }
