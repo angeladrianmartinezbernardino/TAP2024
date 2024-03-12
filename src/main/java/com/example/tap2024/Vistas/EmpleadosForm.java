@@ -19,9 +19,9 @@ public class EmpleadosForm extends Stage {
     private Button btnGuardar;
     private VBox vbxPrincipal;
 
-    public EmpleadosForm(TableView<Empleados_DAO> tbvEmp) {
+    public EmpleadosForm(TableView<Empleados_DAO> tbvEmp, Empleados_DAO objEmp) {
         tbvEmpleado = tbvEmp;
-        objEmp = new Empleados_DAO();
+        this.objEmp = (objEmp == null) ? new Empleados_DAO() : objEmp;
         CrearUI();
         this.setTitle("Insertar usuario");
         this.setScene(escena);
@@ -38,10 +38,19 @@ public class EmpleadosForm extends Stage {
             arTxtCampos[i].setPromptText(arPrompts[i]);
             vbxPrincipal.getChildren().add(arTxtCampos[i]);
         }
+        LlenarForm();
         btnGuardar = new Button("Guardar");
         btnGuardar.setOnAction(event -> GuardarEmpleado());
         vbxPrincipal.getChildren().add(btnGuardar);
         escena = new Scene(vbxPrincipal, 350, 250);
+    }
+
+    private void LlenarForm() {
+        arTxtCampos[0].setText(objEmp.getNombre_empleado());
+        arTxtCampos[1].setText(objEmp.getRfc_empleado());
+        arTxtCampos[3].setText(objEmp.getSalario() + "");
+        arTxtCampos[3].setText(objEmp.getTelefono());
+        arTxtCampos[4].setText(objEmp.getDireccion());
     }
 
     private void GuardarEmpleado() {
