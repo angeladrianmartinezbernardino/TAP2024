@@ -59,7 +59,11 @@ public class EmpleadosForm extends Stage {
         objEmp.setSalario(Float.parseFloat(arTxtCampos[2].getText()));
         objEmp.setTelefono(arTxtCampos[3].getText());
         objEmp.setDireccion(arTxtCampos[4].getText());
-        objEmp.Insertar();
+        if (objEmp.getId_empleado() > 0) {
+            objEmp.Actualizar();
+        } else {
+            objEmp.Insertar();
+        }
         tbvEmpleado.setItems(objEmp.Consultar());
         tbvEmpleado.refresh();
         arTxtCampos[0].clear();

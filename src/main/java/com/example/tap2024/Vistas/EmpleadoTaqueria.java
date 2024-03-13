@@ -62,7 +62,7 @@ public class EmpleadoTaqueria extends Stage {
         tbcTelEmp.setCellValueFactory(new PropertyValueFactory<>("telefono"));
         TableColumn<Empleados_DAO, String> tbcDirEmp = new TableColumn<>("Direccion");
         tbcDirEmp.setCellValueFactory(new PropertyValueFactory<>("direccion"));
-
+        //1
         TableColumn<Empleados_DAO, String> tbcEditar = new TableColumn<Empleados_DAO, String>("Editar");
         tbcEditar.setCellFactory(new Callback<TableColumn<Empleados_DAO, String>, TableCell<Empleados_DAO, String>>() {
             @Override
@@ -70,7 +70,7 @@ public class EmpleadoTaqueria extends Stage {
                 return new ButtonCell(1);
             }
         });
-
+        //2
         TableColumn<Empleados_DAO, String> tbcEliminar = new TableColumn<Empleados_DAO, String>("Eliminar");
         tbcEliminar.setCellFactory(new Callback<TableColumn<Empleados_DAO, String>, TableCell<Empleados_DAO, String>>() {
             @Override

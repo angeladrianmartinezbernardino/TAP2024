@@ -2,9 +2,9 @@ package com.example.tap2024.Componentes;
 
 import com.example.tap2024.Modelos.Empleados_DAO;
 import com.example.tap2024.Vistas.EmpleadosForm;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableCell;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
+
+import java.util.Optional;
 
 public class ButtonCell extends TableCell<Empleados_DAO, String> {
     Button btnCelda;
@@ -24,7 +24,16 @@ public class ButtonCell extends TableCell<Empleados_DAO, String> {
         if (opc == 1) {
             new EmpleadosForm(tbvEmpleados, objEmp);
         } else {
-
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Mensaje del sistema");
+            alert.setHeaderText("Confirmación de acción");
+            alert.setContentText("¿Deseas borrar el empleado?"+objEmp.getNombre_empleado());
+            Optional<ButtonType> result = alert.showAndWait();
+            if(result.get() == ButtonType.OK){
+                objEmp.Eliminar();
+                tbvEmpleados.setItems((objEmp.Consultar()));
+                tbvEmpleados.refresh();
+            }
         }
     }
 
