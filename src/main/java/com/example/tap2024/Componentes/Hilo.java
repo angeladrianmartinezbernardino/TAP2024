@@ -26,6 +26,7 @@ public class Hilo extends Thread {
             try {
                 Thread.sleep((long) (Math.random() * 3000));
             } catch (Exception e) {
+                System.out.println("Error.");
             }
         }
     }
